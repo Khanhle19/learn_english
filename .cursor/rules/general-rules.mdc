@@ -1,0 +1,9 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+- Do not create new markdown files (how-to, explanation, summary, plan) unless asked.
+- Do not add comments except for: security vulnerabilities, blocking bugs, documented design trade-offs, or complex algorithms requiring explanation
+- Always aim for simple structure and clear solution. Make sure that the new changes don't complicate or change the existing design.

@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Mic, Square, Loader2 } from 'lucide-react';
 import { transcribeAudio } from '../services/api.js';
 
 export default function AudioRecorder({ onTranscript, disabled }) {
@@ -55,7 +56,7 @@ export default function AudioRecorder({ onTranscript, disabled }) {
   };
 
   const isLoading = transcribing;
-  const label = isLoading ? '⏳' : recording ? '⏹' : '🎤';
+  const icon = isLoading ? <Loader2 size={18} className="spin" /> : recording ? <Square size={18} /> : <Mic size={18} />;
   const title = isLoading
     ? 'Transcribing…'
     : recording
@@ -70,7 +71,7 @@ export default function AudioRecorder({ onTranscript, disabled }) {
       title={title}
       aria-label={title}
     >
-      {label}
+      {icon}
     </button>
   );
 }

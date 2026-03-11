@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Send } from 'lucide-react';
 import AudioRecorder from './AudioRecorder.jsx';
 
 export default function TextInput({ onSend, disabled }) {
@@ -54,7 +55,7 @@ export default function TextInput({ onSend, disabled }) {
         title="Send message"
         aria-label="Send message"
       >
-        ➤
+        <Send size={18} />
       </button>
     </div>
   );
