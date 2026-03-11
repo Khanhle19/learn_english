@@ -1,0 +1,22 @@
+# Environment secrets — NEVER commit this file
+.env
+
+# Java / Maven build output
+backend/target/
+backend/.mvn/
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
