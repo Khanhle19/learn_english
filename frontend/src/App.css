@@ -153,10 +153,16 @@
   border-bottom-right-radius: 6px;
 }
 
-.replay-btn {
+/* ── Audio player ────────────────────────────────────────────────────────────── */
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 8px;
+}
+
+.audio-toggle-btn {
   display: inline-flex;
-  cursor: pointer;
   align-items: center;
   gap: 5px;
   background: none;
@@ -166,13 +172,37 @@
   font-size: 12px;
   color: var(--primary);
   font-weight: 500;
+  cursor: pointer;
   transition: all 0.18s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.replay-btn:hover {
+.audio-toggle-btn:hover {
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
+}
+
+.audio-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  min-width: 60px;
+  cursor: pointer;
+}
+
+.audio-progress-bar:hover .audio-progress-fill {
+  background: var(--primary-dark);
+}
+
+.audio-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width 0.1s linear;
 }
 
 /* ── Typing indicator ───────────────────────────────────────────────────────── */

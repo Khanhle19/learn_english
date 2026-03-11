@@ -1,10 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { GraduationCap, User, Volume2 } from 'lucide-react';
-
-function playAudio(base64) {
-  const audio = new Audio(`data:audio/mp3;base64,${base64}`);
-  audio.play().catch(() => {});
-}
+import { GraduationCap, User } from 'lucide-react';
+import AudioPlayer from './AudioPlayer.jsx';
 
 export default function ChatWindow({ messages, loading }) {
   const bottomRef = useRef(null);
@@ -23,13 +19,7 @@ export default function ChatWindow({ messages, loading }) {
           <div className="msg-bubble">
             {msg.content}
             {msg.role === 'assistant' && msg.audio && (
-              <button
-                className="replay-btn"
-                onClick={() => playAudio(msg.audio)}
-                title="Replay audio"
-              >
-                <Volume2 size={12} /> Play
-              </button>
+              <AudioPlayer base64={msg.audio} />
             )}
           </div>
         </div>

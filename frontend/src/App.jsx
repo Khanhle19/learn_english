@@ -34,11 +34,6 @@ export default function App() {
       };
 
       setMessages([...updatedMessages, assistantMessage]);
-
-      if (response.audio) {
-        const audioEl = new Audio(`data:audio/mp3;base64,${response.audio}`);
-        audioEl.play().catch(() => {});
-      }
     } catch (err) {
       console.error(err);
       setError('Something went wrong. Please try again.');
